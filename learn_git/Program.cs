@@ -49,6 +49,13 @@ app.MapGet("/api/time", () =>
 .WithName("GetCurrentTime")
 .WithOpenApi();
 
+app.MapGet("/api/hello", () =>
+{
+    return Results.Ok("hello");
+})
+.WithName("GetHello")
+.WithOpenApi();
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
