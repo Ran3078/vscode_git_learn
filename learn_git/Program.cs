@@ -51,7 +51,7 @@ app.MapGet("/api/time", () =>
 
 app.MapGet("/api/hello", () =>
 {
-    return Results.Ok("hello");
+    return Results.Ok("hello world");
 })
 .WithName("GetHello")
 .WithOpenApi();
