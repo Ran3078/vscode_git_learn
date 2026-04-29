@@ -49,11 +49,11 @@ app.MapGet("/api/time", () =>
 .WithName("GetCurrentTime")
 .WithOpenApi();
 
-app.MapGet("/api/hello", () =>
+app.MapGet("/api/healthy", () =>
 {
-    return Results.Ok("hello");
+    return Results.Ok("healthy");
 })
-.WithName("GetHello")
+.WithName("GetStatus")
 .WithOpenApi();
 
 app.Run();
