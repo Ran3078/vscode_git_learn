@@ -1,4 +1,6 @@
-//last_update:2026/04/28
+//last_update:2026/04/29
+using learn_git.Routers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -50,8 +52,3 @@ app.MapGet("/api/time", () =>
 .WithOpenApi();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
