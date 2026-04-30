@@ -6,6 +6,23 @@ namespace learn_git.Controllers;
 [Route("api")]
 public class SystemController : ControllerBase
 {
+    private readonly IHostEnvironment _hostEnvironment;
+
+    public SystemController(IHostEnvironment hostEnvironment)
+    {
+        _hostEnvironment = hostEnvironment;
+    }
+
+    [HttpGet("version")]
+    public IActionResult GetVersion()
+    {
+        return Ok(new
+        {
+            version = "1.0.0",
+            environment = _hostEnvironment.EnvironmentName
+        });
+    }
+
     [HttpGet("time")]
     public IActionResult GetCurrentTime()
     {
