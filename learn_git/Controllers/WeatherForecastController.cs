@@ -13,9 +13,9 @@ public class WeatherForecastController : ControllerBase
     };
 
     [HttpGet]
-    public IActionResult GetWeatherForecast()
+    public IActionResult GetWeatherForecast([FromQuery] int count = 5)
     {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
+        var forecast = Enumerable.Range(1, count).Select(index =>
             new WeatherForecast(
                 DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 Random.Shared.Next(-20, 55),
