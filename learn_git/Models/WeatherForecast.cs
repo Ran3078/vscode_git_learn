@@ -1,4 +1,4 @@
-namespace learn_git.Schemas;
+namespace learn_git.Models;
 
 public record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
